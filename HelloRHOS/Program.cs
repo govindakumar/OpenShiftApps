@@ -14,6 +14,8 @@ namespace HelloRHOS
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+            var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
+            var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
