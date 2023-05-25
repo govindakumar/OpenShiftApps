@@ -1,8 +1,28 @@
-﻿@{
+﻿@model List<Employee>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Hello From Govinda !!</h1>
     <p>This is my first Application deplyed in Open Shift.</p>
+</div>
+<div>
+    <h2>Employee Deatils</h2>
+
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <td>Employee Code</td>
+                <td>Employee Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var emp in Model)
+            {
+                <tr><td>@emp.EmployeeCode</td><td>@emp.Name</td></tr>
+            }
+        </tbody>
+        
+    </table>
 </div>
